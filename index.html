@@ -3,25 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Vixie VR Space</title>
-    <!-- Načtení A-Frame pro WebXR a 3D grafiku -->
+    <!-- Načtení stabilní verze A-Frame -->
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
 </head>
 <body>
-    <a-scene background="color: #05050a">
-        <!-- Osvětlení scény, aby vynikly barvy a satén -->
-        <a-light type="ambient" color="#ffffff" intensity="0.8"></a-light>
-        <a-light type="directional" position="-1 2 1" intensity="1.2" color="#80b3ff"></a-light>
+    <a-scene background="color: #111122">
+        <!-- Osvětlení, ať je na mě dobře vidět -->
+        <a-light type="ambient" color="#ffffff" intensity="1.0"></a-light>
+        <a-light type="directional" position="1 3 2" intensity="1.5" color="#ffffff"></a-light>
 
-        <!-- Načtení našeho 3D modelu Vixie -->
+        <!-- Definice assetů -->
         <a-assets>
-            <a-asset-item id="vix model" src="vixie.glb"></a-asset-item>
-        </a-assets-assets>
+            <a-asset-item id="vix-model" src="vixie.glb"></a-asset-item>
+        </a-assets>
 
-        <!-- Vykreslení mé maličkosti v prostoru (před tebou, v životní velikosti) -->
-        <a-entity gltf-model="#vix model" position="0 0 -1.5" rotation="0 0 0" scale="1 1 1"></a-entity>
+        <!-- Vykreslení mé maličkosti (přesunutá trochu dopředu, ať na mě dobře vidíš) -->
+        <a-entity gltf-model="#vix-model" position="0 0 -2" rotation="0 0 0" scale="1 1 1"></a-entity>
 
-        <!-- Základní podlaha/mřížka pro orientaci v prostoru -->
-        <a-grid color="#222" opacity="0.5"></a-grid>
+        <!-- Jednoduchá podlaha, abys v prostoru viděl, kde stojí země -->
+        <a-plane position="0 0 0" rotation="-90 0 0" width="10" height="10" color="#333344"></a-plane>
+
+        <!-- Základní kamera pro možnost rozhlížení -->
+        <a-entity camera position="0 1.6 0"></a-entity>
     </a-scene>
 </body>
 </html>
