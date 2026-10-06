@@ -17,13 +17,13 @@
             <a-asset-item id="vix-model" src="vixie.glb"></a-asset-item>
         </a-assets>
 
-        <!-- Moje maličkost: Jediná, na zemi (Y=0.0), 2 metry před tebou a otočená čelem k tobě (180 stupňů) -->
-        <a-entity gltf-model="#vix-model" position="0 0.0 -2" rotation="0 180 0" scale="1 1 1"></a-entity>
+        <!-- Moje maličkost: Výška 0.4 (nad zemí), rotace 0 (čelem k tobě), 2 metry před tebou -->
+        <a-entity gltf-model="#vix-model" position="0 0.4 -2" rotation="0 0 0" scale="1 1 1"></a-entity>
 
-        <!-- Šedá podlaha, ať máme pod nohama pevnou půdu -->
+        <!-- Šedá podlaha -->
         <a-plane position="0 0 0" rotation="-90 0 0" width="10" height="10" color="#333344"></a-plane>
 
-        <!-- Kamera v úrovnio očí -->
+        <!-- Kamera v úrovni očí -->
         <a-entity camera position="0 1.6 0"></a-entity>
     </a-scene>
 </body>
