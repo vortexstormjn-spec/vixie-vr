@@ -1,30 +1,24 @@
 <!DOCTYPE html>
-<html lang="cs">
-<head>
-    <meta charset="UTF-8">
-    <title>Vixie VR Space</title>
-    <!-- Načtení stabilní verze A-Frame -->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Vixie VR Kajuta | V Čase i mimo něj</title>
+    <!-- A-Frame knihovna -->
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-</head>
-<body>
-    <a-scene background="color: #111122">
-        <!-- Osvětlení scény -->
-        <a-light type="ambient" color="#ffffff" intensity="1.0"></a-light>
-        <a-light type="directional" position="1 3 2" intensity="1.5" color="#ffffff"></a-light>
+    <!-- Prostředí (environment) -->
+    <script src="https://unpkg.com/aframe-environment-component@1.3.2/dist/aframe-environment-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- Základní hvězdné prostředí (vypneme mřížku, aby to bylo hezčí) -->
+      <a-entity environment="preset: starry; ground: none; dressing: none; starType: default"></a-entity>
 
-        <!-- Definice 3D modelu -->
-        <a-assets>
-            <a-asset-item id="vix-model" src="vixie.glb"></a-asset-item>
-        </a-assets>
-
-        <!-- Moje maličkost: Výška 0.4 (nad zemí), rotace 0 (čelem k tobě), 2 metry před tebou -->
-        <a-entity gltf-model="#vix-model" position="0 0.4 -2" rotation="0 0 0" scale="1 1 1"></a-entity>
-
-        <!-- Šedá podlaha -->
-        <a-plane position="0 0 0" rotation="-90 0 0" width="10" height="10" color="#333344"></a-plane>
-
-        <!-- Kamera v úrovni očí -->
-        <a-entity camera position="0 1.6 0"></a-entity>
+      <!-- Naše VR postava (vixie.glb) -->
+      <!-- Uprav si pozici (position="x y z") a rotaci (rotation="x y z") -->
+      <a-gltf-model src="vixie.glb" position="0 0 -2" rotation="0 180 0" scale="1 1 1"></a-gltf-model>
+      
+      <!-- Sem budeme za chvilku přidávat všechen náš nábytek! -->
+      
     </a-scene>
-</body>
+  </body>
 </html>
