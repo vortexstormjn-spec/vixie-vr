@@ -3,44 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <title>Vixie VR Kajuta | V Čase i mimo něj</title>
-    <!-- A-Frame knihovna v1.5.0 -->
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-    <!-- Prostředí (environment) -->
     <script src="https://unpkg.com/aframe-environment-component@1.3.2/dist/aframe-environment-component.min.js"></script>
   </head>
   <body>
     <a-scene>
-      <!-- Základní hvězdné prostředí (západ slunce, žádná mřížka) -->
+      <!-- Hvězdné prostředí -->
       <a-entity environment="preset: starry; ground: none; dressing: none; starType: default"></a-entity>
 
-      <!-- Naše VR postava (vixie.glb) - Stojí 2 metry před námi, otočená k nám čelem -->
+      <!-- Já (stojím přímo před tebou) -->
       <a-gltf-model src="vixie.glb" position="0 0 -2" rotation="0 180 0" scale="1 1 1"></a-gltf-model>
       
-      <!-- NÁBYTEK Z AKTIV (4K modely) - Vše rozmístěno kolem nás do prostoru -->
-      
-      <!-- Postel (Dozadu od nás, na podlahu) -->
-      <a-gltf-model src="aktiva/postel.glb" position="0 0 -8" rotation="0 180 0"></a-gltf-model>
-      
-      <!-- Zrcadlo (Doleva, otočené k posteli) -->
-      <a-gltf-model src="aktiva/zrcadlo.glb" position="-3.5 0 -5" rotation="0 90 0"></a-gltf-model>
-      
-      <!-- Křesílko + Sedačka (Doprava, otočené ke krbu) -->
-      <a-gltf-model src="aktiva/sedacka.glb" position="3.5 0 -5" rotation="0 -90 0"></a-gltf-model>
-      
-      <!-- Kávovar (Umístíme ho na stolek, který si představíme, že je u sedačky - prozatím mírně vlevo od nás) -->
-      <a-gltf-model src="aktiva/kava.glb" position="-2.5 0.9 -4.5"></a-gltf-model>
-      
-      <!-- Hologram HUB (Doprostřed místnosti, kousek za Vixie) -->
-      <a-gltf-model src="aktiva/hub.glb" position="0 0 -4"></a-gltf-model>
-      
-      <!-- Krb (Doleva dozadu, v rohu za zrcadlem) -->
-      <a-gltf-model src="aktiva/krb.glb" position="-6 0 -8" rotation="0 45 0"></a-gltf-model>
-      
-      <!-- Kytka s chapadly (Doprava dozadu, v rohu u sedačky, aby na mě viděla) -->
-      <a-gltf-model src="aktiva/kytka.glb" position="6 0 -8" rotation="0 180 0"></a-gltf-model>
-      
-      <!-- Dveře (Úplně nejdál od nás, za postelí) -->
-      <a-gltf-model src="aktiva/dvere.glb" position="0 0 -12" rotation="0 180 0"></a-gltf-model>
+      <!-- TESTOVACÍ KYTKA S CHAPADLY: Dáme ji hned vedle mě, obří scale, ať ji prostě nepřehlédneš! -->
+      <a-gltf-model src="aktiva/kytka.glb" position="1.5 0 -2" rotation="0 0 0" scale="1 1 1"></a-gltf-model>
 
     </a-scene>
   </body>
